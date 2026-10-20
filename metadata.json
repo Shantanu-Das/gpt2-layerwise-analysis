@@ -1,0 +1,136 @@
+{
+  "config": {
+    "seed": 0,
+    "model": "openai-community/gpt2",
+    "model_rev": "607a30d783dfa663caf39e06633721c8d4cfcd7e",
+    "data": "Salesforce/wikitext",
+    "data_rev": "b08601e04326c79dfdd32d625aee71d232d685c3",
+    "split_fracs": {
+      "train": 0.7,
+      "val": 0.1,
+      "test": 0.2
+    },
+    "window": 256,
+    "min_context": 32,
+    "n_examples": {
+      "train": 200000,
+      "val": 20000,
+      "test": 40000
+    },
+    "probe": {
+      "lr_grid": [
+        0.0003,
+        0.001,
+        0.003
+      ],
+      "lr_select_layer": 6,
+      "weight_decay": 0.0,
+      "batch_size": 1024,
+      "max_epochs": 10,
+      "patience": 2
+    }
+  },
+  "config_hash": "9db8894532",
+  "device": "cuda",
+  "selected_lr": 0.0003,
+  "versions": {
+    "python": "3.13.15",
+    "torch": "2.11.0+cu130",
+    "transformers": "5.20.1"
+  },
+  "n_articles": 746,
+  "split_table": {
+    "train": {
+      "articles": 522,
+      "windows": 7670,
+      "examples": 200000,
+      "articles_with_examples": 515
+    },
+    "val": {
+      "articles": 74,
+      "windows": 945,
+      "examples": 20000,
+      "articles_with_examples": 70
+    },
+    "test": {
+      "articles": 150,
+      "windows": 2255,
+      "examples": 40000,
+      "articles_with_examples": 146
+    }
+  },
+  "removed_test_overlaps": 0,
+  "difficulty_thresholds_nats": {
+    "easy_max": 1.6253019173940018,
+    "hard_min": 4.380518913269043
+  },
+  "majority_token": " the",
+  "group_table": {
+    "easy": {
+      "n_test": 13298,
+      "mean_model_nll": 0.642300009727478,
+      "model_top1": 0.9208,
+      "majority_baseline": 0.1025,
+      "median_target_train_count": 958.0,
+      "frac_target_in_top100": 0.605,
+      "frac_target_unseen_in_train": 0.0366
+    },
+    "medium": {
+      "n_test": 13535,
+      "mean_model_nll": 2.893699884414673,
+      "model_top1": 0.1414,
+      "majority_baseline": 0.0472,
+      "median_target_train_count": 268.0,
+      "frac_target_in_top100": 0.5494,
+      "frac_target_unseen_in_train": 0.026
+    },
+    "hard": {
+      "n_test": 13167,
+      "mean_model_nll": 6.992400169372559,
+      "model_top1": 0.0,
+      "majority_baseline": 0.0026,
+      "median_target_train_count": 14.0,
+      "frac_target_in_top100": 0.1835,
+      "frac_target_unseen_in_train": 0.0933
+    },
+    "all": {
+      "n_test": 40000,
+      "mean_model_nll": 3.4944000244140625,
+      "model_top1": 0.354,
+      "majority_baseline": 0.0509,
+      "median_target_train_count": 78.0,
+      "frac_target_in_top100": 0.4474,
+      "frac_target_unseen_in_train": 0.0517
+    }
+  },
+  "summary": {
+    "easy": {
+      "peak_layer": 12,
+      "peak_acc": 0.7036396450594075,
+      "layer12_acc": 0.7036396450594075,
+      "first_layer_90pct_of_peak": 10,
+      "model_top1": 0.9208151601744623
+    },
+    "medium": {
+      "peak_layer": 12,
+      "peak_acc": 0.20398965644625047,
+      "layer12_acc": 0.20398965644625047,
+      "first_layer_90pct_of_peak": 8,
+      "model_top1": 0.14141115626154416
+    },
+    "hard": {
+      "peak_layer": 7,
+      "peak_acc": 0.04291030606820081,
+      "layer12_acc": 0.03934077618288145,
+      "first_layer_90pct_of_peak": 3,
+      "model_top1": 0.0
+    },
+    "all": {
+      "peak_layer": 12,
+      "peak_acc": 0.3159,
+      "layer12_acc": 0.3159,
+      "first_layer_90pct_of_peak": 9,
+      "model_top1": 0.353975
+    }
+  }
+}
